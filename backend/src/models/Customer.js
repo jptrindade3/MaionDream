@@ -8,13 +8,11 @@ const CustomerSchema = new mongoose.Schema({
     email: {
         type: String,
         unique: true,
-        required: true,
         lowercase: true
     },
     cpf: {
         type: String,
         unique: true,
-        required: true
     },
     rg: {
         type: String,
@@ -25,7 +23,6 @@ const CustomerSchema = new mongoose.Schema({
     },
     landline: {
         type: Number,
-        unique: true
     },//telefone fixo
     phone: {
         type: Number,
