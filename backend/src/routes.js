@@ -1,10 +1,11 @@
 const express = require('express');
-const { Router } = require('express');
+const userController = require('./controllers/mongo/userController');
 
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-    res.send('Hello world');
-})
+routes.post('/user', userController.create);
+routes.get('/user', userController.read);
+routes.put('/user/:id', userController.update);
+routes.delete('/user/:id', userController.delete);
 
 module.exports = routes;
