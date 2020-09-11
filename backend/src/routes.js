@@ -10,6 +10,8 @@ const intineraryController = require('./controllers/mongo/intineraryController')
 const destinyController = require('./controllers/mongo/destinyController');
 const flightScheduleController = require('./controllers/mongo/flightScheduleController');
 const flightTicketsController = require('./controllers/mongo/flightTicketsController');
+const cityController = require('./controllers/mongo/cityController');
+const hotelController = require('./controllers/mongo/hotelController');
 
 const routes = express.Router();
 
@@ -62,5 +64,15 @@ routes.post('/flightTickets', flightTicketsController.create);
 routes.get('/flightTickets', flightTicketsController.read);
 routes.put('/flightTickets/:id', flightTicketsController.update);
 routes.delete('/flightTickets/:id', flightTicketsController.delete);
+
+routes.post('/city', cityController.create);
+routes.get('/city', cityController.read);
+routes.put('/city/:id', cityController.update);
+routes.delete('/city/:id', cityController.delete);
+
+routes.post('/hotel', hotelController.create);
+routes.get('/hotel', hotelController.read);
+routes.put('/hotel/:id', hotelController.update);
+routes.delete('/hotel/:id', hotelController.delete);
 
 module.exports = routes;
