@@ -1,28 +1,62 @@
 const mongoose = require('mongoose');
 
-const CitySchema = new mongoose.Schema({
+const CarSchema = new mongoose.Schema({
     travelID: {
         type: String,
         required: true,
-        unique: true
     },
-    city: {
+
+    cityID: {
         type: String,
         required: true,
     },
+
+    category: {
+        type: String
+    },
+
+    pickup: {
+        location: {
+            type: String
+        },
+        date: {
+            type: Date
+        }
+    },
+
+    dropOff: {
+        location: {
+            type: String
+        },
+        date: {
+            type: Date
+        }
+    },
+
+    rentPrice: {
+        type: Number
+    },
+
+    insurance: {
+        type: String
+    },
+
+    others: {
+        type: String
+    },
+
     currency: {
-        type: String,
-        required: true,
+        type: String
     }
 });
 
-const CityData = mongoose.model('City', CitySchema);
+const CarData = mongoose.model('Car', CarSchema);
 
-class City {
+class Car {
     //Create
-    static newCity(data){
+    static newCar(data){
 		return new Promise((resolve, reject) => {
-			CityData.create(data).then((result) => {
+			CarData.create(data).then((result) => {
 				resolve(result);
 			})
 			.catch((error) => {
@@ -32,9 +66,9 @@ class City {
     }
     
     //Read
-    static getAllCities(){
+    static getAllCars(){
         return new Promise((resolve, reject) => {
-            CityData.find({}).then((results)=> {
+            CarData.find({}).then((results)=> {
                 resolve(results);
             }).catch((error)=> {
              reject(error);
@@ -44,9 +78,9 @@ class City {
     }
 
     //Update
-    static updateCity(id, City) {
+    static updateCar(id, Car) {
         return new Promise((resolve, reject) => {
-            CityData.findByIdAndUpdate(id, City).then(() => {
+            CarData.findByIdAndUpdate(id, Car).then(() => {
                 resolve();
             }).catch((err) => {
                 reject(err);
@@ -55,9 +89,9 @@ class City {
     }
 
     //Delete
-    static deleteCity(id) {
+    static deleteCar(id) {
         return new Promise((resolve, reject) => {
-            CityData.findByIdAndDelete(id).then(() => {
+            CarData.findByIdAndDelete(id).then(() => {
                 resolve();
             }).catch((err) => {
                 reject(err);
@@ -66,4 +100,4 @@ class City {
     }
 };
 
-module.exports = City;
+module.exports = Car;

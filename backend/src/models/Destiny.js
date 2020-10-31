@@ -9,7 +9,7 @@ const DestinySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    coin: {
+    currency: {
         type: String,
         required: true
     }

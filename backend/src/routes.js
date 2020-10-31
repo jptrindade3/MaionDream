@@ -12,6 +12,9 @@ const flightScheduleController = require('./controllers/mongo/flightScheduleCont
 const flightTicketsController = require('./controllers/mongo/flightTicketsController');
 const cityController = require('./controllers/mongo/cityController');
 const hotelController = require('./controllers/mongo/hotelController');
+const carController = require('./controllers/mongo/carController');
+const serviceController = require('./controllers/mongo/serviceController');
+const transferController = require('./controllers/mongo/transferController');
 
 const routes = express.Router();
 
@@ -74,5 +77,20 @@ routes.post('/hotel', hotelController.create);
 routes.get('/hotel', hotelController.read);
 routes.put('/hotel/:id', hotelController.update);
 routes.delete('/hotel/:id', hotelController.delete);
+
+routes.post('/car', carController.create);
+routes.get('/car', carController.read);
+routes.put('/car/:id', carController.update);
+routes.delete('/car/:id', carController.delete);
+
+routes.post('/service', serviceController.create);
+routes.get('/service', serviceController.read);
+routes.put('/service/:id', serviceController.update);
+routes.delete('/service/:id', serviceController.delete);
+
+routes.post('/transfer', transferController.create);
+routes.get('/transfer', transferController.read);
+routes.put('/transfer/:id', transferController.update);
+routes.delete('/transfer/:id', transferController.delete);
 
 module.exports = routes;
