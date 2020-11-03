@@ -1,0 +1,13 @@
+.main-header {
+    background: #323232;
+    border-bottom: #F3AB85 solid 5px;
+    
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 80px;
+    width: 100vw;
+}

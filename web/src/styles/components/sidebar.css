@@ -1,0 +1,32 @@
+.main-sidebar {
+    background: #323232;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+
+    width: 200px;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+.sidebar-item {
+    background: #323232;
+
+    width: 100%;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: #f2f2f2 solid 1px;
+    
+    transition: 0.3s;
+}
+
+.sidebar-item:hover {
+    color: #C4694A;
+    border-bottom: #C4694A solid 1px;
+}
